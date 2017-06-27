@@ -1,0 +1,245 @@
+﻿@using Shopping_Cart.Helpers;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>@ViewBag.Title - Rest Easy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="keywords" content="Mattress Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+   
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/memenu.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/myCSS.css" rel="stylesheet" />
+
+    <!-- start menu -->
+
+</head>
+<body>
+
+   
+
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="social">
+
+                    <h1><a href="/Home/Index" style="color: white; font-family: Lucida Bright, Georgia, serif; font-weight: bolder;">
+                            Sandman Hammock Emporium
+                        </a></h1>                      
+                    
+                </div>
+                <div class="header-left">
+
+                    <div class="search-box">
+                        <div id="sb-search" class="sb-search">
+                            <form action="#" method="post">
+                                <input class="sb-search-input" placeholder="What are you looking for?" type="search" id="search">
+                                <input class="sb-search-submit" type="submit" value="">
+                                <span class="sb-icon-search"> </span>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="ca-r">
+                        <div class="cart box_1">
+                            @*<a href="/Home/checkout">*@
+                                <a href="/ShoppingCarts/Index">
+                                <h3>
+
+                                    <div class="total">
+                                        <p id="Total"></p>
+                                    </div>
+
+                                    <img src="~/Content/images/cart.png" alt="" />
+                                </h3>
+                            </a>
+
+                            <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="head-top">
+                
+                @Html.Partial("_LoginPartial")
+<!--Title-->
+                @*<div class="subheading">
+
+                </div>*@
+                <div class="h_menu4"  id="flyout">                
+                    <ul class="memenu skyblue">
+
+                        <li>
+                            <a class="color9" id="slogan" href="/home/Index">"EXIT: LIGHT, ENTER: NIGHT!"</a>
+                        </li>
+
+
+                        <li><a class="color10" href="#"> | </a></li>
+
+
+                        <li id="meproduct" >
+                            <a class="color1" href="/Home/Products">VIEW OUR PRODUCTS</a>
+
+                            <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="/Home/Products">Hammocks</a></li>
+                                                <li><a href="/Home/Products">Stands (Coming Soon!)</a></li>
+
+               
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+
+                        @*<li class="color2">
+                            <a href="/Home/Products">Hammocks</a>
+                            
+                        </li>
+
+                        <li class="color2">
+                            <a href="/Home/Products">Stands</a>
+                           
+                        </li>*@
+                                        
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <hr />
+    <footer>
+        <div class="footer w3layouts">
+            <div class="container">
+                <div class="footer-top-at w3">
+
+                    <div class="col-md-3 amet-sed w3l">
+                        <h4>MORE INFO:</h4>
+                        <ul class="nav-bottom">
+                            <li><a href="#">How to order</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="~/Home/contact">Location</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Membership</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 amet-sed w3ls">
+                        <h4>CATEGORIES:</h4>
+                        <ul class="nav-bottom">
+                            <li><a href="#">Bed linen</a></li>
+                            <li><a href="#">Cushions</a></li>
+                            <li><a href="#">Duvets</a></li>
+                            <li><a href="#">Pillows</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3 amet-sed agileits">
+                        <h4>NEWSLETTER:</h4>
+                        <div class="stay agileinfo">
+                            <div class="stay-left wthree">
+                                <form action="#" method="post">
+                                    <input type="text" placeholder="Enter your email " required="">
+                                </form>
+                            </div>
+                            <div class="btn-1 w3-agileits">
+                                <form action="#" method="post">
+                                    <input type="submit" value="Subscribe">
+                                </form>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 amet-sed agileits-w3layouts">
+                        <h4><a style="color: white; text-decoration: underline;" href="/Home/contact">CONTACT US</a></h4>
+                        <p>Contrary to popular belief, we are not pirates that bankroll the Hook Pirate Cartel.</p>
+                        <p>We are just simple folk that just-so-happen to reside in Neverland and make remarkable hammocks.</p>
+                        <p>Please feel free to contact us at the link above for any further inquiries</p>
+                
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="footer-class w3-agile">
+                <p>
+                © 2017 All Rights Reserved | Original Template Design by  <a href="https://w3layouts.com/mattress-furniture-ecommerce-flat-bootstrap-responsive-web-template/" target="_blank">W3layouts</a> | <a href="/Home/Admin">Administration</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!--Scripts-->
+        
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/memenu.js"></script>
+    <script src="~/Scripts/jquery.flexslider.js"></script>
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+    <script src="~/Scripts/imagezoom.js"></script>
+    <script src="~/Scripts/simpleCart.min.js"></script>
+    <script src="~/Scripts/classie.js"></script>
+    <script src="~/Scripts/uisearch.js"></script>
+    <script src="~/Scripts/_references.js"></script>  
+   
+    <script>
+        new UISearch(document.getElementById('sb-search'));
+    </script>
+
+    <script>
+        	$(document).ready(function () {
+                var output_Total = Total.calcTotal();
+                var total = output_Total.toFixed(2);
+                 $('#Total').text(total).prepend("$");
+             });
+    </script>
+   
+
+
+    <script>
+        $(document).ready(function () {
+            $(".memenu").memenu();
+        });
+    </script>
+
+    @this.RenderSection("Scripts", false)
+
+</body>
+</html>

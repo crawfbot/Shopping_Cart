@@ -1,0 +1,127 @@
+﻿@using Shopping_Cart.Helpers;
+
+@model IEnumerable<Shopping_Cart.Models.ShoppingCart>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+<div class="grow">
+    <div class="container">
+        <h2>Your Shopping Cart</h2>
+    </div>
+</div>
+
+<br />
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+ <div class="container">
+    <div class="col-md-9">
+
+        <table class="table">
+            <tr>
+                <th>
+                        Product Image
+                    </th>
+                <th>
+                    User
+                    @*@Html.DisplayNameFor(model => model.Customer.FirstName)*@
+                </th>
+                <th>
+                    Product Name
+                    @*@Html.DisplayNameFor(model => model.Item.Name)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Count)
+                </th>
+                <th>
+                    Date/Time Item Added
+                    @*@Html.DisplayNameFor(model => model.Created)*@
+                </th>
+                <th></th>
+            </tr>
+                                                                            <!--style="display: block;  max-width:200px;  max-height:200px;   width: auto;  height: auto;"-->
+            @foreach (var item in Model)
+            {
+                <tr>
+                     <td>
+                         <a href="/Home/Products/">   
+                         <img src="@Url.Content(item.Item.MediaUrl )" style="display: block;  max-width:100px;  max-height:100px;   width: auto;  height: auto;" />
+                         </a>   
+                     </td>
+
+                    <td style="padding-top: 3em;">
+                        @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                    </td>
+                    <td style="padding-top: 3em;">
+                        @Html.DisplayFor(modelItem => item.Item.Name)
+                    </td>
+                    <td style="padding-top: 3em;">
+                        @Html.DisplayFor(modelItem => item.Count)
+                    </td>
+                    <td style="padding-top: 3em;">
+                        @Html.DisplayFor(modelItem => item.Created)
+                    </td>
+                    <td style="padding-top: 3em;">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+
+    <div class="col-md-3">
+        @*<a class="continue" href="#"> Proceed With Order </a>*@ 
+
+        <div class="price-details">
+            <h3>Price Details</h3>
+            <span>Total</span>
+
+            <div class="total">
+                $@ViewBag.num
+            </div>
+
+            @*<span>Discount</span>
+                <span class="total1">---</span>*@
+
+            <span>Delivery Charges</span>
+            <span class="total1">Free!</span>
+
+            <div class="clearfix"></div>
+        </div>
+        <ul class="total_price">
+            <li class="last_price"> <h4>Total</h4></li>
+            <li>
+                <div class="total">
+                    $@ViewBag.num
+                </div>
+            </li>
+
+            <div class="clearfix"> </div>
+        </ul>
+
+
+        <div class="clearfix"></div>
+
+        <a class="order" href="/Orders/Create">Continue With Current Order</a>
+
+        @Html.ActionLink("View All Orders", "Index", "Orders", null, new { @class = "btn btn-default btn-block" })
+
+        @*<div class="total-item">
+            <h3>OPTIONS</h3>
+                <h4>COUPONS</h4>
+                <a class="cpns" href="#">Apply Coupons</a>
+                <p><a href="#">Log In</a> to use accounts - linked coupons</p>
+        </div>*@
+
+    </div>
+
+    <div class="clearfix"> </div>
+</div>
+

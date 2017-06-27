@@ -1,0 +1,96 @@
+﻿@model Shopping_Cart.Models.Item
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="grow">
+    <div class="container">
+        <h2>Delete Item</h2>
+    </div>
+</div>
+
+<hr />
+
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MediaUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Updated)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions col-md-offset-1 col-md-10">
+            <input type="submit" value="Delete Item" class="btn btn-danger btn-block" /> 
+        </div>
+  }
+</div>
+<br />
+<hr />
+
+@Html.ActionLink("Go Back", "Index", "Items", new { @class = "btn btn-default" })
